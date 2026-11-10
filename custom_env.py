@@ -33,11 +33,9 @@ class LunarRewardShaper(gym.Wrapper):
             custom_reward -= 0.5
 
         #PENALTY C: Stay close to the target, as x_pos is 0 at the exact center, we multiply by 2.0 to nag ai to move towards center
-        custom_reward -= (abs(x_pos) * 2.0)
+        custom_reward -= (abs(x_pos) * 5.0)
 
-
-        #REWARD A: safe touchdown, if both legs on the ground and barely moving, give it reward
-        if left_leg == 1.0 and right_leg == 1.0 and abs(y_vel) < 0.1:
-            custom_reward += 50.0
+        #PENALTY D: Stop Drifting sideways, because it's going out of the area it's supposed to land
+        custom_reward -= (abs(x_vel) * 3.0)
 
         return obs, custom_reward, terminated, truncated, info
