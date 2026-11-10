@@ -1,20 +1,22 @@
 import gymnasium as gym
 from stable_baselines3 import PPO
 import os 
+from custom_env import LunarRewardShaper #My custom logic i coded
 
 #creating a directory to save trained AI weights
 os.makedirs("models", exist_ok=True)
 
 #creating environment but not with graphics this is only for ai to train in dark
-env = gym.make("LunarLander-v3")
+base_env = gym.make("LunarLander-v3")
+env = LunarRewardShaper(base_env)
 
 #PPO agent, MlpPolicy=multi-layer perceptron neural network, verbose=1 prints the training progress in terminal for me to watch
 print("Initializing AI Agent...")
-model = PPO("MlpPolicy", env, verbose=1)
+model = PPO("MlpPolicy", env, verbose=1, tensorboard_log="./ppo_lunar_tensorboard/")
 
 #now training the agent part 
 print("Starting training phase...")
-model.learn(total_timesteps=100000)
+model.learn(total_timesteps=500000)
 
 #saving model's brain to a file
 model_path = "models/ppo_lunar_lander"
