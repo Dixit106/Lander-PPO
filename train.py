@@ -16,7 +16,7 @@ model = PPO("MlpPolicy", env, verbose=1, tensorboard_log="./ppo_lunar_tensorboar
 
 #now training the agent part 
 print("Starting training phase...")
-model.learn(total_timesteps=500000)
+model.learn(total_timesteps=1000000)
 
 #saving model's brain to a file
 model_path = "models/ppo_lunar_lander"
