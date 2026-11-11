@@ -12,6 +12,8 @@ Get to the ground Fix:- AI also used a loophole which would give it good amount 
 Burn Exploit Fix:- AI realised that buring more fule will result in decreased points so to get more reward it decided to freefall and then burst the engine when reaching ground and even after that burst it was very noticable that rocket was slamming into the ground. I had to fix it by reducing the fuel using penelty.
 
 Hovering Loophole Fix:- AI is again trying to outsmart me and after fixing Burn Exploit Fix where i made using fuel a bit cheap and said to make vertical speed good for landing. Ai concluded that going down, landing with a perfect speed is hard so as fuel is cheap it will just float above the target. To fix this we introduce TIME TAX which will give AI and urgency to land which should fix this problem.
+
+3 Million Model:- Now my rules were set and they are now hard for AI to follow so I have to train 3 Million Step Model but this would take a lot of time and to reduce that time i used some new tools replacing old ones to use my CPU to make 8 isolated environments working at same time to get result fast. Before there was only 1 environment doing things step by step without any help which was taking more time(hopefully my cpu will handel this well.)
 # Built With
 **Python**:
 

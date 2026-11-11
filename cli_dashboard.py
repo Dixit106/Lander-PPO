@@ -8,7 +8,7 @@ from rich.table import Table
 from rich.text import Text 
 from rich import box 
 
-LOG_FILE = "logs/monitor.csv"
+LOG_FILE = "logs/monitor.monitor.csv"
 
 def generate_layout() -> Layout:
     """Defines the grid for the terminal dashboard."""
@@ -48,11 +48,18 @@ def create_stats_panel(df) -> Panel:
     # Color code the average score
     color = "red" if avg_last_100 < 0 else "yellow" if avg_last_100 < 150 else "green"
 
+    last_mod_time = os.path.getmtime(LOG_FILE)
+    time_since_last_update = time.time() - last_mod_time 
+
+    if time_since_last_update > 5:
+        status_text = "[bold red]TRAINING STOPPED[/]"
+    else:
+        status_text = "[blink green]TRAINING ACTIVE[/]"
     stats_text = (
         f"[b]Total Episodes:[/b] {total_episodes}\n\n"
         f"[b]Best Score:[/b] [cyan]{best_score:.2f}[/cyan]\n\n"
         f"[b]Avg Score (Last 100):[/b] [{color}]{avg_last_100:.2f}[/{color}]\n\n"
-        f"[b]Status:[/b] [blink green]TRAINING ACTIVE[/]"
+        f"[b]Status:[/b] {status_text}"
     )
     return Panel(Text.from_markup(stats_text), title="[b]Global Stats[/b]", border_style="cyan")
 
