@@ -10,6 +10,8 @@ AI sees the world as an array of 8 numbers (X/Y coordinates, velocities, tilt an
 Get to the ground Fix:- AI also used a loophole which would give it good amount of points if it landed rocket at ground so to get that massive points it started to ignore the final destination where rocket should land and it was just prioritzing landing the rocket on ground anywhere.
 
 Burn Exploit Fix:- AI realised that buring more fule will result in decreased points so to get more reward it decided to freefall and then burst the engine when reaching ground and even after that burst it was very noticable that rocket was slamming into the ground. I had to fix it by reducing the fuel using penelty.
+
+Hovering Loophole Fix:- AI is again trying to outsmart me and after fixing Burn Exploit Fix where i made using fuel a bit cheap and said to make vertical speed good for landing. Ai concluded that going down, landing with a perfect speed is hard so as fuel is cheap it will just float above the target. To fix this we introduce TIME TAX which will give AI and urgency to land which should fix this problem.
 # Built With
 **Python**:
 

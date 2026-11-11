@@ -39,6 +39,10 @@ class LunarRewardShaper(gym.Wrapper):
         custom_reward -= (abs(x_vel) * 3.0)
 
         #PENALTY E: SPEED LIMIT, vertical spped should be better so that there is a smooth landing not slaming the socket down.
-        custom_reward -= (abs(y_vel) * 3.0)
+        custom_reward -= (abs(y_vel) * 1.0)
+
+        #PENALTY F: Time Tax, to create sense of urgency to land and waste less fuel by using perfect amount for a clean landing
+        if left_leg == 0.0 and right_leg == 0.0:
+            custom_reward -= 0.5
 
         return obs, custom_reward, terminated, truncated, info
