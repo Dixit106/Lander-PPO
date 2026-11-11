@@ -30,12 +30,15 @@ class LunarRewardShaper(gym.Wrapper):
 
         #PENALTY B: Fuel efficiency, teaching ai to save fuel
         if action == 2:
-            custom_reward -= 0.5
+            custom_reward -= 0.1
 
         #PENALTY C: Stay close to the target, as x_pos is 0 at the exact center, we multiply by 2.0 to nag ai to move towards center
         custom_reward -= (abs(x_pos) * 5.0)
 
         #PENALTY D: Stop Drifting sideways, because it's going out of the area it's supposed to land
         custom_reward -= (abs(x_vel) * 3.0)
+
+        #PENALTY E: SPEED LIMIT, vertical spped should be better so that there is a smooth landing not slaming the socket down.
+        custom_reward -= (abs(y_vel) * 3.0)
 
         return obs, custom_reward, terminated, truncated, info
