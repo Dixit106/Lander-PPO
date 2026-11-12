@@ -14,6 +14,8 @@ Burn Exploit Fix:- AI realised that buring more fule will result in decreased po
 Hovering Loophole Fix:- AI is again trying to outsmart me and after fixing Burn Exploit Fix where i made using fuel a bit cheap and said to make vertical speed good for landing. Ai concluded that going down, landing with a perfect speed is hard so as fuel is cheap it will just float above the target. To fix this we introduce TIME TAX which will give AI and urgency to land which should fix this problem.
 
 3 Million Model:- Now my rules were set and they are now hard for AI to follow so I have to train 3 Million Step Model but this would take a lot of time and to reduce that time i used some new tools replacing old ones to use my CPU to make 8 isolated environments working at same time to get result fast. Before there was only 1 environment doing things step by step without any help which was taking more time(hopefully my cpu will handel this well.)
+
+Hyperparameter Tuning:- 3 Million Model is performing nicely now and following all my rules but those rules are a bit too harsh so points that AI is getting is still negative so i will now make those rules more easy so that it's easy for AI to follow and perform it's best. Lets see what the results will be after training.
 # Built With
 **Python**:
 

@@ -51,7 +51,7 @@ def create_stats_panel(df) -> Panel:
     last_mod_time = os.path.getmtime(LOG_FILE)
     time_since_last_update = time.time() - last_mod_time 
 
-    if time_since_last_update > 5:
+    if time_since_last_update > 15:
         status_text = "[bold red]TRAINING STOPPED[/]"
     else:
         status_text = "[blink green]TRAINING ACTIVE[/]"
