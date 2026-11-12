@@ -16,6 +16,8 @@ Hovering Loophole Fix:- AI is again trying to outsmart me and after fixing Burn 
 3 Million Model:- Now my rules were set and they are now hard for AI to follow so I have to train 3 Million Step Model but this would take a lot of time and to reduce that time i used some new tools replacing old ones to use my CPU to make 8 isolated environments working at same time to get result fast. Before there was only 1 environment doing things step by step without any help which was taking more time(hopefully my cpu will handel this well.)
 
 Hyperparameter Tuning:- 3 Million Model is performing nicely now and following all my rules but those rules are a bit too harsh so points that AI is getting is still negative so i will now make those rules more easy so that it's easy for AI to follow and perform it's best. Lets see what the results will be after training.
+
+Evaluate_gravity.py script:- After my latest 3 million model testing AI had become pretty good now so i decided to make a script where gravity will be changed according to the planets we have in solar system and AI have to land on those planet environment with training it has done on earth gravity. I saw both non video and video results and they were very obvious that survival rate was 100% on earth, 90% on mars and 60% on moon as it has very different gravity compared to earth and mars.
 # Built With
 **Python**:
 

@@ -29,7 +29,7 @@ print("\nCommencing interstellar flight tests. Running 10 flights per planet...\
 #simulation loop
 for planet, gravity in planets.items():
     #passing custom gravity directly into physics engine
-    env = gym.make("LunarLander-v3", gravity=gravity)
+    env = gym.make("LunarLander-v3", gravity=gravity, render_mode="human")
 
     scores = []
     landings = 0
