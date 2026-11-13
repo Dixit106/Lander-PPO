@@ -30,7 +30,7 @@ evaluate_wind.py:- I made a new script to add realistic, unpredictable details t
 # Built With
 **Python**: Core programming language used to write all scripts, custom wrappers, and training loops.
 
-**Other Micro Tools/Libraries:**1. Stable-Baselines3: The reinforcement learning library that provided the PPO algorithm, actual "brain" of AI.
+**Other Micro Tools/Libraries:** 1. Stable-Baselines3: The reinforcement learning library that provided the PPO algorithm, actual "brain" of AI.
 
 2. Gymnasium: The framework that provided the environment.
 
