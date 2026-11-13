@@ -60,6 +60,7 @@ def main():
         # base environment with native wind and turbulence
         base_env = gym.make(
             "LunarLander-v3",
+            render_mode="human",
             enable_wind=params["enable_wind"],
             wind_power=params["wind_power"],
             turbulence_power=params["turbulence"]
