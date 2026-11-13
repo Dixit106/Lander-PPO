@@ -29,11 +29,17 @@ evaluate_wind.py:- I made a new script to add realistic, unpredictable details t
 
 # Built With
 **Python**: Core programming language used to write all scripts, custom wrappers, and training loops.
+
 **Other Micro Tools/Libraries:**1. Stable-Baselines3: The reinforcement learning library that provided the PPO algorithm, actual "brain" of AI.
+
 2. Gymnasium: The framework that provided the environment.
+
 3. Box2D: The 2D physics engine providing gravity, collisions and winds etc.
+
 4. Rich: Library to make CLI dashboard and other terminal scripts look good.
+
 5. Pygame: Used to render visual game window and take human keyboard input when needed.
+
 6. TensorBoard: Used to track the AI's math, graph, it's learining and monitor different stuff to decide future decisions.
 
 
